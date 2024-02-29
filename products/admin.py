@@ -10,7 +10,7 @@ class GroupAdmin(admin.ModelAdmin):
 
 
 @admin.register(products.Product)
-class Admin(admin.ModelAdmin):
+class ProductAdmin(admin.ModelAdmin):
   list_display = ('id', 'name',)
 
 @admin.register(lessons.Lesson)
