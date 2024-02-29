@@ -9,8 +9,6 @@ class Product(models.Model):
     students = models.ManyToManyField(
         User, verbose_name='Студенты продукта'
         )
-    min_members = models.PositiveIntegerField()
-    max_members = models.PositiveIntegerField()
     price = models.PositiveBigIntegerField()
     date_start = models.DateField()
     date_end = models.DateField()

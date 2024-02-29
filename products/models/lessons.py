@@ -6,6 +6,7 @@ class Lesson(models.Model):
     name = models.CharField('Название', max_length=255)
     video = models.URLField()
     product = models.ForeignKey('Product', models.CASCADE)
+    student = models.ManyToManyField('Employee')
 
     class Meta:
         verbose_name = 'Урок'
