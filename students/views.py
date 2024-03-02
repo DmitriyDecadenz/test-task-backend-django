@@ -1,15 +1,13 @@
 
-from rest_framework import generics
-from products.models.groups import Group
-from students.serializer.users import RegistrationSerializer
-from django.contrib.auth.models import User
+from rest_framework import permissions
+from rest_framework.generics import CreateAPIView
+from students.serializers.users import UserSerializer
+from django.contrib.auth import get_user_model
 
+class CreateUserView(CreateAPIView):
 
+    model = get_user_model()
+    permission_classes = [permissions.AllowAny]
+    serializer_class = UserSerializer
 
-users = User.objects.all()
-
-
-
-class RegistrationView(generics.CreateAPIView):
-  queryset =  users
-  serializer_class = RegistrationSerializer
+  
